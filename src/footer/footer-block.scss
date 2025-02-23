@@ -1,0 +1,17 @@
+.footer-block {
+  height: 298px;
+  background-color: #32373d;
+  overflow: visible;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footer-block-content {
+  color: #fff;
+  margin: 30px 160px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

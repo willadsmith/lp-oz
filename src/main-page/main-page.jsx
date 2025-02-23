@@ -1,18 +1,110 @@
+import {Anchor, Button, Input, Modal} from "antd";
+import AboutMe from "../content-blocks/about-me/about-me";
+import LawHelp from "../content-blocks/law-help/law-help";
+import SuccessCases from "../content-blocks/success-cases/success-cases";
+import AboutMeMedia from "../content-blocks/about-me-media/about-me-media";
+import Contacts from "../content-blocks/contacts/contacts";
 import Header from "../header/header";
-import { Anchor } from "antd";
-import AboutMe from "../content-blocks/about-me";
-import LawHelp from "../content-blocks/law-help";
-import SuccessCases from "../content-blocks/success-cases";
-import AboutMeMedia from "../content-blocks/about-me-media";
-import Contacts from "../content-blocks/contacts";
+import {useEffect, useState} from "react";
+import './main-page.scss'
+import Footer from "../footer/footer";
 
 function MainPage() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const { TextArea } = Input;
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+    const antAnchorContainer = document.getElementsByClassName('ant-anchor')
+    const antAnchorLinkTitle = document.getElementsByClassName('ant-anchor-link-title')
+    const antAnchorLink = document.getElementsByClassName('ant-anchor-link')
+    const antAnchorInk = document.getElementsByClassName('ant-anchor-ink')
+
+    //background-color: #f6ffed;
+    function anchorLinkTitleChange () {
+        for (let i = 0; i < antAnchorLinkTitle.length; i++) {
+            antAnchorLinkTitle[i].style.color = '#f6ffed';
+            antAnchorLinkTitle[i].classList.add('ant-anchor-font');
+        }
+    }
+
+    function anchorLinkChange () {
+        for (let i = 0; i < antAnchorLinkTitle.length; i++) {
+            // antAnchorLink[i]?.classList.add('ant-anchor-font');
+            antAnchorLink[i].style.fontFamily = 'GoznakBold';
+        }
+    }
+
+    function antInkChange () {
+        for (let i = 0; i < antAnchorInk.length; i++) {
+            antAnchorInk[i].style.backgroundColor = '#f6ffed';
+        }
+    }
+
+    useEffect(() => {
+        antAnchorContainer[0].style.padding = '15px 160px'
+        antAnchorContainer[0].classList.add('ant-anchor-blur');
+    }, [antAnchorContainer])
+
+    useEffect(() => {
+        anchorLinkTitleChange()
+    }, [antAnchorLinkTitle])
+
+    useEffect(() => {
+        anchorLinkChange()
+    }, [antAnchorLink])
+
+    useEffect(() => {
+        antInkChange()
+    }, [antAnchorInk])
+
     return (
         <>
+            <Modal
+                title="Заполните форму"
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer={
+                    <Button style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
+                        Отправить заявку
+                    </Button>}>
+                <p>Кратко опишите суть проблемы и я обязательно помогу Вам</p>
+                <TextArea placeholder="Ваше ФИО" autoSize/>
+                <div
+                    style={{
+                        margin: '12px 0',
+                    }}
+                />
+                <TextArea placeholder="Ваш e-mail адрес" autoSize={{
+                    minRows: 2,
+                    maxRows: 6,
+                }}
+                />
+                <div
+                    style={{
+                        margin: '24px 0',
+                    }}
+                />
+                <TextArea
+                    placeholder="Ваш вопрос"
+                    autoSize={{
+                        minRows: 3,
+                        maxRows: 5,
+                    }}
+                />
+            </Modal>
             <div
                 style={{
-                    padding: '20px',
-                    // background: 'rgb(83,133,150)',
+                    color: '#fff',
                     background: 'linear-gradient(90deg, rgba(83,133,150,1) 0%, rgba(107,157,173,1) 49%, rgba(104,152,168,1) 100%)'
                 }}
             >
@@ -37,7 +129,7 @@ function MainPage() {
                         {
                             key: 'part-4',
                             href: '#part-4',
-                            title: 'Обо сне в СМИ',
+                            title: 'Публикации в СМИ',
                         },
                         {
                             key: 'part-5',
@@ -47,7 +139,7 @@ function MainPage() {
                     ]}
                 />
             </div>
-            <Header />
+            <Header openModalHandler={() => showModal()} />
             <div>
                 <AboutMe id="part-1" />
                 <LawHelp id="part-2" />
@@ -55,6 +147,7 @@ function MainPage() {
                 <AboutMeMedia id="part-4" />
                 <Contacts id="part-5" />
             </div>
+            <Footer />
         </>
     )
 }

@@ -1,12 +1,37 @@
 @import '../../assets/styles/colors';
 
-.about-me-block {
+.contacts-block {
   width: 100%;
   height: 754px;
   background: $blue-dark-color-bg;
   background: $blue-dark-color-gradient;
   border-radius: 35px 35px 0 0;
   margin-top: -35px;
-  z-index: 10;
+  z-index: 1;
   position: relative;
+}
+
+.contacts-block-content {
+  display: flex;
+  width: auto;
+  align-items: flex-start;
+  flex-direction: column;
+  // padding: 20px 160px 20px 160px;
+  margin-left: 160px;
+}
+
+.contacts-block-content-title {
+  color: $white;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  font-family: 'GoznakBold', sans-serif;
+
+  .line {
+    display: block;
+    width: 60px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: $white;
+  }
 }
