@@ -1,13 +1,15 @@
-import {Anchor, Button, Input, Modal} from "antd";
-import AboutMe from "../content-blocks/about-me/about-me";
-import LawHelp from "../content-blocks/law-help/law-help";
-import SuccessCases from "../content-blocks/success-cases/success-cases";
-import AboutMeMedia from "../content-blocks/about-me-media/about-me-media";
-import Contacts from "../content-blocks/contacts/contacts";
+import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row} from "antd";
+import AboutMe from "../../content-blocks/about-me/about-me";
+import LawHelp from "../../content-blocks/law-help/law-help";
+import SuccessCases from "../../content-blocks/success-cases/success-cases";
+import AboutMeMedia from "../../content-blocks/about-me-media/about-me-media";
+import Contacts from "../../content-blocks/contacts/contacts";
 import Header from "../header/header";
 import {useEffect, useState} from "react";
 import './main-page.scss'
 import Footer from "../footer/footer";
+import {MenuOutlined} from "@ant-design/icons";
+import {ButtonMenuAnimate} from "../../components/button-menu-animate/button-menu-animate";
 
 function MainPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,8 +68,57 @@ function MainPage() {
         antInkChange()
     }, [antAnchorInk])
 
+    const [openDrawer, setDrawerOpen] = useState(false);
+
+    const showDrawer = (value) => {
+        setDrawerOpen(true)
+    }
+
+    const onClose = () => {
+        setDrawerOpen(false);
+    };
+
     return (
         <>
+            <Flex className={openDrawer ? 'main-page-menu-icon-mobile-small' : 'main-page-menu-icon-mobile'}>
+                <ButtonMenuAnimate onClick={showDrawer} />
+            </Flex>
+            <Drawer open={openDrawer} onClose={onClose}>
+                <Row>
+                    <Col span={8}>
+                        <Anchor
+                            onClick={onClose}
+                            items={[
+                                {
+                                    key: 'part-1',
+                                    href: '#part-1',
+                                    title: 'Обо мне',
+                                },
+                                {
+                                    key: 'part-2',
+                                    href: '#part-2',
+                                    title: 'Правовая помощь',
+                                },
+                                {
+                                    key: 'part-3',
+                                    href: '#part-3',
+                                    title: 'Мои успешные кейсы',
+                                },
+                                {
+                                    key: 'part-4',
+                                    href: '#part-4',
+                                    title: 'Публикации в СМИ',
+                                },
+                                {
+                                    key: 'part-5',
+                                    href: '#part-5',
+                                    title: 'Контакты',
+                                },
+                            ]}
+                        />
+                    </Col>
+                </Row>
+            </Drawer>
             <Modal
                 title="Заполните форму"
                 open={isModalOpen}
@@ -102,12 +153,7 @@ function MainPage() {
                     }}
                 />
             </Modal>
-            <div
-                style={{
-                    color: '#fff',
-                    background: 'linear-gradient(90deg, rgba(83,133,150,1) 0%, rgba(107,157,173,1) 49%, rgba(104,152,168,1) 100%)'
-                }}
-            >
+            <div className='desktop_main_menu'>
                 <Anchor
                     direction="horizontal"
                     items={[

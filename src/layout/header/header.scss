@@ -1,0 +1,82 @@
+@import '../../assets/styles/colors';
+
+.header-block {
+  display: flex;
+  background: $blue-lite-color-bg-gradient;
+  width: 100%;
+
+  @media screen and (max-width: 1106px) {
+    flex-direction: column;
+  }
+}
+
+.title-vacancy {
+  font-family: 'GoznakBold', sans-serif;
+  font-weight: 400;
+  color: $white;
+  margin: 0;
+  font-size: 36px;
+}
+
+.title-firstname {
+  font-family: 'PassionsConflictRus', sans-serif;
+  font-weight: 500;
+  color: $white;
+  margin: 0;
+  font-size: 100px;
+}
+
+.title-slogan {
+  font-family: 'PassionsConflictRus', sans-serif;
+  font-weight: 200;
+  color: $white;
+  font-size: 40px;
+  margin-top: 10px;
+  // font-style: italic;
+}
+
+.header-block-title-desktop {
+  display: flex;
+  margin-left: 100px;
+
+  @media screen and (max-width: 1106px) {
+    display: none;
+  }
+}
+
+.header-block-title-mobile {
+  display: none;
+
+  @media screen and (max-width: 1106px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.header-block-button-desktop {
+  display: flex;
+  @media screen and (max-width: 1106px) {
+    display: none;
+  }
+}
+
+.header-block-divider {
+  background: $white;
+}
+
+.person-photo {
+  display: flex;
+  margin-top: 20px;
+  width: 728px;
+  overflow: hidden;
+  flex-direction: row;
+
+  @media screen and (max-width: 1106px) {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+  }
+}

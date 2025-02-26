@@ -20,6 +20,10 @@ $accentColor: #ffffff;
   flex-direction: column;
   // padding: 20px 160px 20px 160px;
   margin-left: 160px;
+
+  @media screen and (max-width: 480px) {
+    margin: 0
+  }
 }
 
 .success-cases-block-content-title {

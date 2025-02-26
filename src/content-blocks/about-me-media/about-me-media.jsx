@@ -24,8 +24,8 @@ function AboutMeMedia(props) {
                     <>Публикации в СМИ</>
                 </Space>
             </Space>
-            <Flex style={{ marginLeft: 160, marginRight: 160 }} vertical={false} justify={'space-between'}>
-                <Space>
+            <Flex className='block-with-posts' vertical={false} align='center' justify={'center'}>
+                <Space className='about-me-media-photo'>
                     <img className='person-photo-about-me' alt='about-me-photo' width={400} src={AboutMePhoto}/>
                 </Space>
                 <Space>

@@ -18,7 +18,6 @@
   align-items: flex-start;
   flex-direction: column;
   // padding: 20px 160px 20px 160px;
-  margin-left: 160px;
 }
 
 .about-me-block-content-title {
@@ -52,6 +51,14 @@
   }
 }
 
+.about-me-block-description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+
 .person-photo-about-me {
   border-radius: 10px;
 }
@@ -60,6 +67,10 @@
 .about-me-block-description {
   display: flex;
   flex-direction: row;
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+  }
 }
 
 .about-me-block-description-title {
@@ -76,6 +87,23 @@
   font-style: normal;
   font-family: 'GoznakBold', sans-serif;
   font-weight: 500;
+
+  @media screen and (max-width: 1340px) {
+    font-size: 13px;
+    font-weight: 300;
+  }
+}
+
+.about-me-block-lines {
+  height: 100%;
+  margin-top: 100px;
+  margin-left: 160px;
+  margin-right: 160px;
+
+  @media screen and (max-width: 1340px) {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
 }
 
 .icon-change-color-base {
@@ -92,11 +120,25 @@
   font-family: 'GoznakBold', sans-serif;
   width: auto;
   color: white;
-  height: 150px;
+  height: 40px;
   border-radius: 10px;
   border: 1px #e0e0e0 solid;
-  //background: $blue-dark-color-bg;
-  //box-shadow: 0 10px 30px #0e0e33, 0 0 30px #0d0d15
+
+  @media screen and (max-width: 1460px) {
+    padding: 10px 60px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    padding: 10px 50px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    padding: 10px 30px;
+  }
+
+  @media screen and (max-width: 1340px) {
+    padding: 10px 20px;
+  }
 }
 
 #hover-style {

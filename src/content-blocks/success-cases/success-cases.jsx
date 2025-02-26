@@ -1,4 +1,4 @@
-import {Flex, Space} from "antd";
+import {Flex, Space, Timeline} from "antd";
 import './success-cases.scss'
 
 const successCasesItem = [

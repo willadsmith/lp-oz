@@ -1,18 +1,9 @@
 import {Flex, Space} from "antd";
 import './law-help.scss'
 import ScrollBlock from "../../components/scroll-block/scroll-block";
-import {useEffect} from "react";
 import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
 
-const mainBlock = document.querySelectorAll(".main-block-item");
-
 function LawHelp(props) {
-
-    useEffect(() => {
-        mainBlock.forEach((item) => {
-            // item.style.top = '130px';
-        })
-    }, [mainBlock])
 
     return (
         <Flex id={props.id} className='law-help-block'>

@@ -27,7 +27,7 @@ const myExperienceItem = [
 
 function AboutMe(props) {
     return (
-        <Flex id={props.id} className='about-me-block' vertical={true}>
+        <Flex align={'center'} id={props.id} className='about-me-block' vertical={true}>
             <Space className='about-me-block-content'>
                 <Space className='about-me-block-content-title'>
                     <span className='line'></span>
@@ -35,7 +35,7 @@ function AboutMe(props) {
                 </Space>
                 <Space className='about-me-block-description'>
                     <img className='person-photo-about-me' alt='about-me-photo' width={300} src={AboutMePhoto}/>
-                    <Flex style={{ marginLeft: 30, marginBottom: 50 }} vertical={true}>
+                    <Space className='about-me-block-description-container'>
                         <Space>
                             <h2 className='about-me-block-description-title'>Адвокат Ольга Забалуева</h2>
                         </Space>
@@ -46,14 +46,14 @@ function AboutMe(props) {
                                     {item}</h4>
                             </Space>
                         })}
-                    </Flex>
+                    </Space>
                 </Space>
                 <Space className='about-me-block-content-sub-title'>
                     <span className='line'></span>
                     <>Мой опыт</>
                 </Space>
             </Space>
-            <Flex vertical={true} style={{ height: '400px', marginTop: '100px', marginLeft:'160px', marginRight:'160px' }}>
+            <Flex vertical={true} className='about-me-block-lines'>
                 {myExperienceItem.map((item, i) => {
                     return <Space key={i} className='card-info-block'>
                         <img alt={i} className='icon-change-color-base' width={30} src={item.icon} /> {i === 3 ?

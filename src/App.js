@@ -1,4 +1,4 @@
-import MainPage from "./main-page/main-page";
+import MainPage from "./layout/main-page/main-page";
 
 function App() {
   return (

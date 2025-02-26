@@ -17,6 +17,10 @@
   flex-direction: column;
   // padding: 20px 160px 20px 160px;
   margin-left: 160px;
+
+  @media screen and (max-width: 480px) {
+    margin: 0
+  }
 }
 
 .about-me-media-block-content-title {
@@ -69,6 +73,11 @@
   }
 }
 
+.person-photo-about-me {
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
 .styled-wrapper .button {
   display: block;
   position: relative;
@@ -89,6 +98,14 @@
   inset: 7px;
   border: 3px solid $blue-dark-color-gradient;
   transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms, transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.about-me-media-photo {
+  display: flex;
+
+  @media screen and (max-width: 1430px) {
+    display: none;
+  }
 }
 
 .styled-wrapper .button:after {
@@ -136,4 +153,13 @@
 .styled-wrapper .button:focus .button-box {
   transition: 0.4s;
   transform: translateX(-69px);
+}
+
+.block-with-posts {
+  margin-left: 160px;
+  margin-right: 160px;
+
+  @media screen and (max-width: 480px) {
+    margin: 0;
+  }
 }
