@@ -1,0 +1,81 @@
+@import '../../assets/styles/colors.scss';
+
+.cssbuttons-io-button-dark {
+  background: $blue-dark-color-bg;
+  color: white;
+  border: 1px solid #fff;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'GoznakBold', sans-serif;
+  border-radius: 0.9em;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 3.2em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button-dark .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.6em;
+  width: 2.6em;
+  border-radius: 0.7em;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.title-after-hover {
+  display: none;
+}
+
+.title-before-hover {
+  display: block;
+}
+
+.cssbuttons-io-button-dark:hover .title-after-hover {
+  display: block;
+  text-align: center;
+  color: $white;
+  position: relative;
+  z-index: 2;
+}
+
+.cssbuttons-io-button-dark:hover .title-before-hover {
+  display: none;
+}
+
+.cssbuttons-io-button-dark:hover {
+  text-align: center;
+  color: white;
+}
+
+.cssbuttons-io-button-dark:hover .icon {
+  width: calc(100% - 0.4em);
+  background: $blue-dark-color-bg;
+  border: 4px solid $blue-dark-color-bg;
+  right: 0;
+}
+
+.cssbuttons-io-button-dark .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: $blue-dark-color-gradient;
+}
+
+.cssbuttons-io-button-dark:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button-dark:active .icon {
+  transform: scale(0.95);
+}
