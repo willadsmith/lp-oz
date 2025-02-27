@@ -78,6 +78,11 @@
   padding: 30px 30px 30px 30px;
   font-family: 'GoznakBold', sans-serif;
   margin-bottom: 40px;
+
+  @media screen and (max-width: 480px) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .person-photo-block {

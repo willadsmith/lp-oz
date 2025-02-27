@@ -76,6 +76,12 @@
 .person-photo-about-me {
   border-radius: 10px;
   margin-right: 30px;
+
+  @media screen and (max-width: 480px) {
+    border-radius: 10px;
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .styled-wrapper .button {

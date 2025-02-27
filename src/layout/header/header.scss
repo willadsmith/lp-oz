@@ -16,6 +16,10 @@
   color: $white;
   margin: 0;
   font-size: 36px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 24px;
+  }
 }
 
 .title-firstname {
@@ -24,6 +28,10 @@
   color: $white;
   margin: 0;
   font-size: 100px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 36px;
+  }
 }
 
 .title-slogan {
@@ -33,6 +41,10 @@
   font-size: 40px;
   margin-top: 10px;
   // font-style: italic;
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
 }
 
 .header-block-title-desktop {
@@ -49,9 +61,12 @@
 
   @media screen and (max-width: 1106px) {
     display: flex;
+    position: absolute;
     flex-direction: column;
     margin-left: 10%;
+    top: 20px;
     margin-right: 10%;
+    left: 2px;
   }
 }
 
@@ -78,5 +93,14 @@
     width: 100%;
     overflow: hidden;
     justify-content: center;
+  }
+}
+
+.lady-person-photo {
+  @media screen and (max-width: 1106px) {}
+  @media screen and (max-width: 480px) {
+    display: flex;
+    margin-left: 130px;
+    height: 310px;
   }
 }

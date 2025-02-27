@@ -26,7 +26,7 @@ function Header(props) {
                             <ContactMeButton onPress={() => props.openModalHandler()} />
                         </Flex>
                     </Flex>
-                    <img alt={'lady-person'} height={700} src={LadyPersonResize}/>
+                    <img className='lady-person-photo' alt={'lady-person'} height={700} src={LadyPersonResize}/>
                 </Space>
             </Flex>
         </Flex>
