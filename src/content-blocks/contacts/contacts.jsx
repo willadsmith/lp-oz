@@ -13,7 +13,7 @@ function Contacts(props) {
                 </Space>
             </Space>
             <Space className='contacts-block-content-buttons-block'>
-                <Space>
+                <Space className='contacts-block-item-secondary'>
                     <Space className='contacts-block-content-buttons-block-1' vertical={true}>
                         <img className='vk-qr-block' style={{ borderRadius: 4, marginBottom: 20, marginLeft: 30 }} alt='qr' src={QrVk} width='250px' />
                         <Button className='button-contacts-main'>

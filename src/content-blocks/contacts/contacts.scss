@@ -120,3 +120,12 @@
 .vk-qr-block {
 
 }
+
+.contacts-block-item-secondary {
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+}

@@ -34,7 +34,7 @@ function AboutMeMedia(props) {
                              return <div className='about-me-media-block-main-context'>
                                  <div className='line-link'></div>
                                  <div className='about-me-media-block-main-title'>
-                                     <Flex vertical={true} justify={'space-between'}>
+                                     <Flex style={{ marginTop: 10 }} vertical={true} justify={'space-between'}>
                                          <h2 className='title'>{item.title}</h2>
                                          <h4 className='description'>{item.description}</h4>
                                      </Flex>
@@ -71,7 +71,7 @@ function AboutMeMedia(props) {
                                          </a>
                                      </div>
                                  </div>
-                                 <div className='line-link'></div>
+                                 {/*<div className='line-link'></div>*/}
                              </div>
                             }
                         )}
