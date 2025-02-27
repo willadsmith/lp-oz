@@ -21,7 +21,7 @@ function Contacts(props) {
                         </Button>
                     </Space>
                     <Flex vertical={true}>
-                        <Flex vertical={false}>
+                        <Flex justify='center' align='center' vertical={false}>
                             <Space className='contacts-block-content-buttons-block-2' >
                                 <Button className='button-contacts-main'>Telegram</Button>
                                 <Button className='button-contacts-main'>Facebook</Button>

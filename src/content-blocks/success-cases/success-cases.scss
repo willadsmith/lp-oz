@@ -22,7 +22,8 @@ $accentColor: #ffffff;
   margin-left: 160px;
 
   @media screen and (max-width: 480px) {
-    margin: 0
+    margin: 0;
+    width: 100%;
   }
 }
 
@@ -31,6 +32,11 @@ $accentColor: #ffffff;
   margin-bottom: 25px;
   margin-top: 50px;
   font-family: 'GoznakBold', sans-serif;
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+    padding-left: 30px;
+  }
 
   .text {
     color: $white;
@@ -82,11 +88,11 @@ ol {
   padding: 0;
 }
 
-li + li {
+.success-cases-li + .success-cases-li {
   margin-top: 1rem;
 }
 
-li {
+.success-cases-li {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -100,7 +106,7 @@ li {
   box-shadow: 0.25rem 0.25rem 0.75rem rgb(0 0 0 / 0.1);
 }
 
-li::before {
+.success-cases-li::before {
   font-family: 'GoznakBold', sans-serif;
   counter-increment: list-item;
   content: counter(list-item);
@@ -117,7 +123,7 @@ li::before {
   align-items: center;
 }
 
-li:nth-child(even) {
+.success-cases-li:nth-child(even) {
   flex-direction: row-reverse;
   border: 1px #ffffff solid;
   font-family: 'GoznakBold', sans-serif;
@@ -125,4 +131,14 @@ li:nth-child(even) {
   background: $blue-dark-color-gradient;
   margin-right: -2rem;
   margin-left: 2rem;
+}
+
+.success-cases-block-timeline {
+  display: none;
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+    display: flex;
+    margin-left: 20px;
+  }
 }

@@ -5,10 +5,14 @@
   font-family: 'GoznakBold', sans-serif;
   display: flex;
   flex-flow: column;
+
+  @media screen and (max-width: 480px) {
+    width: 300px;
+  }
+
   .card {
     overflow: hidden;
     height: 432px;
-    max-width: 719px;
     max-width: 719px;
     text-align: center;
     background: $blue-dark-color-gradient;
@@ -21,6 +25,11 @@
     position: sticky;
     margin-left: auto;
     margin-right: auto;
+
+    @media screen and (max-width: 480px) {
+      width: 390px;
+    }
+
     &__header {
       background: $blue-dark-color-gradient;
       width: 100%;
@@ -32,6 +41,10 @@
       align-items: center;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      @media screen and (max-width: 480px) {
+        width: auto;
+        padding: 8px 17px 0 18px;
+      }
       h2 {
         font-size: 1em;
       }

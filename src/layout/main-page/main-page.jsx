@@ -70,7 +70,7 @@ function MainPage() {
 
     const [openDrawer, setDrawerOpen] = useState(false);
 
-    const showDrawer = (value) => {
+    const showDrawer = () => {
         setDrawerOpen(true)
     }
 
@@ -81,7 +81,7 @@ function MainPage() {
     return (
         <>
             <Flex className={openDrawer ? 'main-page-menu-icon-mobile-small' : 'main-page-menu-icon-mobile'}>
-                <ButtonMenuAnimate onClick={showDrawer} />
+                <ButtonMenuAnimate onClick={!openDrawer ? showDrawer : onClose} />
             </Flex>
             <Drawer open={openDrawer} onClose={onClose}>
                 <Row>
