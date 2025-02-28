@@ -29,13 +29,13 @@ function SuccessCases(props) {
                 <Space className='success-cases-block-content-title'>
                     <span className='text'>Здесь представлены некоторые интересные дела, по которым вынесены решения в пользу моих клиентов для общего понимания моей частной практики.</span>
                 </Space>
-                {/*<Space>*/}
-                {/*    <ol role="list">*/}
-                {/*        {successCasesItem.map((item, index) => {*/}
-                {/*            return <li className='success-cases-li' key={index}>{item}</li>*/}
-                {/*        })}*/}
-                {/*    </ol>*/}
-                {/*</Space>*/}
+                <Space className='success-cases-block-timeline-desktop'>
+                    <ol role="list">
+                        {successCasesItem.map((item, index) => {
+                            return <li className='success-cases-li' key={index}>{item.children}</li>
+                        })}
+                    </ol>
+                </Space>
 
                 <Space className='success-cases-block-timeline'>
                     <ConfigProvider

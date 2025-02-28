@@ -133,6 +133,14 @@ ol {
   margin-left: 2rem;
 }
 
+.success-cases-block-timeline-desktop {
+  display: flex;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
 .success-cases-block-timeline {
   display: none;
 
