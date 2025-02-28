@@ -8,10 +8,6 @@ const allCards = document.querySelectorAll(".cards-scroll .card");
 const headerHeight = 40;
 const cardsCount = allCards.length;
 
-function F(props) {
-    return null;
-}
-
 const ScrollBlock = (props) => {
     useEffect(() => {
         allCards.forEach((card, i) => {
