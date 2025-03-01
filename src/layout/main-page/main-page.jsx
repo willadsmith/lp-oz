@@ -70,20 +70,21 @@ function MainPage() {
 
     const [openDrawer, setDrawerOpen] = useState(false);
 
-    const showDrawer = () => {
-        setDrawerOpen(true)
-    }
-
     const onClose = () => {
         setDrawerOpen(false);
     };
 
+    const onClickOpenDrawerHandler = (e) => {
+        e.preventDefault()
+        openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
+    }
+
     return (
         <>
             <Flex className={openDrawer ? 'main-page-menu-icon-mobile-small' : 'main-page-menu-icon-mobile'}>
-                <ButtonMenuAnimate onClick={!openDrawer ? showDrawer : onClose} />
+                <ButtonMenuAnimate onClick={(e) => onClickOpenDrawerHandler(e)} />
             </Flex>
-            <Drawer open={openDrawer} onClose={onClose}>
+            <Drawer open={openDrawer}>
                 <Row>
                     <Col span={8}>
                         <Anchor
