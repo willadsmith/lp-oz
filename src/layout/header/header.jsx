@@ -19,12 +19,13 @@ function Header(props) {
                 <Space className='person-photo'>
                     <Flex className='header-block-title-mobile'>
                         <h3 className='title-vacancy'>Адвокат</h3>
-                        <h1 className='title-firstname'>Ольга Забалуева</h1>
+                        <h1 className='title-firstname'>Ольга <br/>Забалуева</h1>
                         <Divider className='header-block-divider'/>
                         <h4 className='title-slogan'> - Ваш надёжный защитник - </h4>
-                        <Flex className='header-block-button-desktop' justify='flex-end' alignItems="center">
-                            <ContactMeButton onPress={() => props.openModalHandler()} />
-                        </Flex>
+                        <ContactMeButton onPress={() => props.openModalHandler()} />
+                        {/*<Flex className='header-block-button-desktop' justify='flex-end' alignItems="center">*/}
+                        {/*    */}
+                        {/*</Flex>*/}
                     </Flex>
                     <img className='lady-person-photo' alt={'lady-person'} height={700} src={LadyPersonResize}/>
                 </Space>
