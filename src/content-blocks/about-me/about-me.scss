@@ -10,6 +10,10 @@
   z-index: 1;
   position: relative;
   padding-bottom: 150px;
+
+  @media screen and (max-width: 480px) {
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 .about-me-block-content {

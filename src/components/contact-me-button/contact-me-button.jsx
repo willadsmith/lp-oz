@@ -22,7 +22,7 @@ function ContactMeButton(props) {
                     </svg>
                 </div>
                 <div className='title-after-hover'>
-                    Отправить заявку
+                    Обратиться за помощью
                 </div>
         </Button>
 )

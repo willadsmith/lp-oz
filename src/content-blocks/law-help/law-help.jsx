@@ -4,7 +4,6 @@ import ScrollBlock from "../../components/scroll-block/scroll-block";
 import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
 
 function LawHelp(props) {
-
     return (
         <Flex id={props.id} className='law-help-block'>
             <Space className='law-help-block-content'>
@@ -23,7 +22,7 @@ function LawHelp(props) {
                         </div>
                     </Flex>
                     <div>
-                        <ScrollBlock/>
+                        <ScrollBlock onPress={() => props.onPress()}/>
                     </div>
                 </Flex>
             </Space>

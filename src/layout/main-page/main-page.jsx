@@ -188,10 +188,10 @@ function MainPage() {
             <Header openModalHandler={() => showModal()} />
             <div>
                 <AboutMe id="part-1" />
-                <LawHelp id="part-2" />
+                <LawHelp id="part-2" onPress={() => showModal()} />
                 <SuccessCases id="part-3" />
                 <AboutMeMedia id="part-4" />
-                <Contacts id="part-5" />
+                <Contacts id="part-5" onPress={() => showModal()} />
             </div>
             <Footer />
         </>

@@ -75,7 +75,7 @@ const ScrollBlock = (props) => {
                           <div className='card__content_button'>
                               <Space>{item.price}</Space>
                               <Flex style={{ marginTop: 8 }} width="100%" alignItems="center">
-                                  <ContactMeButtonDark />
+                                  <ContactMeButtonDark onPress={() => props.onPress()} />
                               </Flex>
                           </div>
                       </div>

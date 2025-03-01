@@ -11,6 +11,10 @@
   align-items: center;
   padding-top: 50px;
   padding-bottom: 150px;
+
+  @media screen and (max-width: 480px) {
+    border-radius: 15px 15px 0 0;
+  }
 }
 
 .law-help-block-content {

@@ -1,11 +1,11 @@
 import { Button } from "antd";
-import './contact-me-button-dark.scss'
+import './button-dark-social.scss'
 
-function ContactMeButtonDark(props) {
+function ButtonDarkSocial(props) {
     return (
         <Button type="text" className="cssbuttons-io-button-dark" onClick={() => props.onPress()}>
             <div className='title-before-hover'>
-                Обратиться за помощью
+                {props.title}
             </div>
                 <div className="icon">
                     <svg
@@ -22,10 +22,10 @@ function ContactMeButtonDark(props) {
                     </svg>
                 </div>
                 <div className='title-after-hover'>
-                    Обратиться за помощью
+                    {props.title}
                 </div>
         </Button>
 )
 }
 
-export default ContactMeButtonDark
+export default ButtonDarkSocial

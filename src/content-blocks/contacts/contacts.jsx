@@ -2,6 +2,8 @@ import {Button, Flex, Space} from "antd";
 import QrVk from './../../assets/img/qr_vk.jpg'
 import './contacts.scss'
 import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
+import ContactMeButtonDark from "../../components/contact-me-button-dark/contact-me-button-dark";
+import ButtonDarkSocial from "../../components/button-dark-social/button-dark-social";
 
 function Contacts(props) {
     return (
@@ -15,17 +17,15 @@ function Contacts(props) {
             <Space className='contacts-block-content-buttons-block'>
                 <Space className='contacts-block-item-secondary'>
                     <Space className='contacts-block-content-buttons-block-1' vertical={true}>
-                        <img className='vk-qr-block' style={{ borderRadius: 4, marginBottom: 20, marginLeft: 30 }} alt='qr' src={QrVk} width='250px' />
-                        <Button className='button-contacts-main'>
-                            Отправить заявку
-                        </Button>
+                        <img className='vk-qr-block' style={{ borderRadius: 4, marginBottom: 20 }} alt='qr' src={QrVk} width='280px' />
+                        <ContactMeButtonDark onPress={() => props.onPress()} />
                     </Space>
                     <Flex vertical={true}>
                         <Flex justify='center' align='center' vertical={false}>
-                            <Space className='contacts-block-content-buttons-block-2' >
-                                <Button className='button-contacts-main'>Telegram</Button>
-                                <Button className='button-contacts-main'>Facebook</Button>
-                                <Button className='button-contacts-main'>Instagram</Button>
+                            <Space className='contacts-block-content-buttons-block-2'>
+                                <ButtonDarkSocial title='Telegram'/>
+                                <ButtonDarkSocial title='Facebook'/>
+                                <ButtonDarkSocial title='Instagram'/>
                             </Space>
                             <Space className='contacts-block-content-buttons-block-3'>
                                 <img className='person-photo-about-me' alt='about-me-photo' width={400} height={280} src={AboutMePhoto}/>
