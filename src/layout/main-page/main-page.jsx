@@ -29,6 +29,7 @@ function MainPage() {
     const antAnchorLinkTitle = document.getElementsByClassName('ant-anchor-link-title')
     const antAnchorLink = document.getElementsByClassName('ant-anchor-link')
     const antAnchorInk = document.getElementsByClassName('ant-anchor-ink')
+    const spanIconElementDrawerMenu = document.querySelectorAll('span');
 
     //background-color: #f6ffed;
     function anchorLinkTitleChange () {
@@ -68,27 +69,60 @@ function MainPage() {
         antInkChange()
     }, [antAnchorInk])
 
+    useEffect(() => {
+        for (let i = 0; i < spanIconElementDrawerMenu.length; i++) {
+            if (spanIconElementDrawerMenu[i].offsetParent !== null) {
+                if (spanIconElementDrawerMenu[i].offsetParent.classList[0] === 'main-page-menu-icon-mobile-small' ||
+                    spanIconElementDrawerMenu[i].offsetParent.classList[0] === 'main-page-menu-icon-mobile'
+                ) {
+                    openDrawer ?
+                        spanIconElementDrawerMenu[i].parentElement.querySelectorAll('input')[0].checked = true
+                        :
+                        spanIconElementDrawerMenu[i].parentElement.querySelectorAll('input')[0].checked = false
+                }
+            }
+        }
+    }, [spanIconElementDrawerMenu])
+
     const [openDrawer, setDrawerOpen] = useState(false);
 
     const onClose = () => {
-        setDrawerOpen(false);
+        openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
     };
 
     const onClickOpenDrawerHandler = (e) => {
-        e.preventDefault()
-        openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
+        if (e.target.type === 'checkbox' || e.target.className === 'ant-anchor-link-title') {
+            openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
+        }
     }
+
+    const drawerStyles = {
+        // mask: {
+        //     backdropFilter: 'blur(10px)',
+        // },
+        content: {
+            // boxShadow: '-10px 0 10px #666',
+            fontFamily: 'GoznakBold',
+            color: '#f6ffed',
+        },
+        header: {
+            backgroundColor: '#6898A8FF',
+        },
+        body: {
+            backgroundColor: '#6898A8FF',
+        }
+    };
 
     return (
         <>
             <Flex className={openDrawer ? 'main-page-menu-icon-mobile-small' : 'main-page-menu-icon-mobile'}>
                 <ButtonMenuAnimate onClick={(e) => onClickOpenDrawerHandler(e)} />
             </Flex>
-            <Drawer open={openDrawer}>
+            <Drawer styles={drawerStyles} open={openDrawer}>
                 <Row>
                     <Col span={8}>
                         <Anchor
-                            onClick={onClose}
+                            onClick={(e) => onClickOpenDrawerHandler(e)}
                             items={[
                                 {
                                     key: 'part-1',
