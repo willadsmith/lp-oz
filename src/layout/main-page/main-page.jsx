@@ -86,39 +86,18 @@ function MainPage() {
 
     const [openDrawer, setDrawerOpen] = useState(false);
 
-    const onClose = () => {
-        openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
-    };
-
     const onClickOpenDrawerHandler = (e) => {
         if (e.target.type === 'checkbox' || e.target.className === 'ant-anchor-link-title') {
             openDrawer ? setDrawerOpen(false) : setDrawerOpen(true);
         }
     }
 
-    const drawerStyles = {
-        // mask: {
-        //     backdropFilter: 'blur(10px)',
-        // },
-        content: {
-            // boxShadow: '-10px 0 10px #666',
-            fontFamily: 'GoznakBold',
-            color: '#f6ffed',
-        },
-        header: {
-            backgroundColor: '#6898A8FF',
-        },
-        body: {
-            backgroundColor: '#6898A8FF',
-        }
-    };
-
     return (
         <>
             <Flex className={openDrawer ? 'main-page-menu-icon-mobile-small' : 'main-page-menu-icon-mobile'}>
                 <ButtonMenuAnimate onClick={(e) => onClickOpenDrawerHandler(e)} />
             </Flex>
-            <Drawer styles={drawerStyles} open={openDrawer}>
+            <Drawer open={openDrawer}>
                 <Row>
                     <Col span={8}>
                         <Anchor
