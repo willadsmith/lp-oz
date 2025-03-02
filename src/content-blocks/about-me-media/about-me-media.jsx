@@ -11,7 +11,7 @@ const aboutMeMedia = [
     { title: 'В первом чтении приняты поправки запрещающие распространять рекламу', description: 'Размещение на информационных ресурсах запрещены', url: 'https://www.advgazeta.ru/novosti/v-pervom-chtenii-prinyaty-popravki-zapreshchayushchie-rasprostranyat-reklamu-na-informatsionnykh-resursakh/'},
     { title: '«Это только начало»: 40 новосибирцев подали иск к СГК — как прошел суд', description: 'Первое заседание', url: 'https://ngs.ru/text/criminal/2024/08/22/73989197/?utm_source=app&utm_medium=ios'},
     { title: 'Конфликт интересов 22.07.2018', description: 'НТН24', url: 'https://youtu.be/QI58kFD7dCs?si=m73qtWTFvf7P7cD9'},
-    { title: 'Общественник нашел коттедж семьи главы новосибирского управления Росимущества', description: 'Глава новосибирского управления Росимущества Олег Галлямов не задекларировал никакой недвижимости в собственности.', url: 'https://tayga.info/140731?fbclid=IwZXh0bgNhZW0CMTEAAR1PiFJ6-wzAV0AmbBPDV2fOkBAXdHXpJgjS68gl3c6QieoXQy92Dbm9PVw_aem_OHj3juxdkXH_SsR8thaTrA'},
+    { title: 'Общественник нашел коттедж семьи главы новосибирского управления Росимущества', description: 'Глава новосибирского управления Росимущества ...', url: 'https://tayga.info/140731?fbclid=IwZXh0bgNhZW0CMTEAAR1PiFJ6-wzAV0AmbBPDV2fOkBAXdHXpJgjS68gl3c6QieoXQy92Dbm9PVw_aem_OHj3juxdkXH_SsR8thaTrA'},
     { title: 'Конфликт интересов 17.12.2017', description: 'НТН24', url: 'https://youtube.com/watch?v=I95yY8PiBBE&si=K45IweD8ba3sF7QG'}
 ]
 
