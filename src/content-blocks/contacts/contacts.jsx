@@ -27,9 +27,9 @@ function Contacts(props) {
                                 <ButtonDarkSocial title='Facebook'/>
                                 <ButtonDarkSocial title='Instagram'/>
                             </Space>
-                            <Space className='contacts-block-content-buttons-block-3'>
-                                <img className='person-photo-about-me' alt='about-me-photo' width={400} height={280} src={AboutMePhoto}/>
-                            </Space>
+                            {/*<Space className='contacts-block-content-buttons-block-3'>*/}
+                            {/*    <img className='person-photo-about-me' alt='about-me-photo' width={400} height={280} src={AboutMePhoto}/>*/}
+                            {/*</Space>*/}
                         </Flex>
                         <Space>
                             <Space className='contact-block-attentions'>

@@ -36,8 +36,8 @@
 }
 
 .title-slogan {
-  // font-family: 'PassionsConflictRus', sans-serif;
-  font-family: 'GoznakBold', sans-serif;
+  font-family: 'PassionsConflictRus', sans-serif;
+  // font-family: 'GoznakBold', sans-serif;
   font-weight: 200;
   color: $white;
   font-size: 40px;
@@ -45,9 +45,8 @@
   // font-style: italic;
 
   @media screen and (max-width: 480px) {
-
-    margin-top: 5px;
-    font-size: 10px;
+    margin-top: -10px;
+    font-size: 20px;
   }
 }
 
@@ -84,6 +83,10 @@
 
 .header-block-divider {
   background: $white;
+
+  @media screen and (max-width: 480px) {
+    width: 50%;
+  }
 }
 
 .person-photo {

@@ -8,12 +8,14 @@ import CorporateLawsEvent from '../../assets/img/icons/corporate-laws-event.png'
 import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
 import './about-me.scss'
 import {ReadOutlined} from "@ant-design/icons";
+import {useEffect} from "react";
+import {Animator, batch, Fade, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 
 const aboutMeDescription = [
     'Правовая помощь в любой сложной ситуации',
     'Объясню сложные юридические тонкости на понятном языке',
-    'Окажу юридические услуги качественно, быстро и без лишних потерь по всем направле-ниям',
-    'Со мной Вы получите надежную защиту и моральную поддержку в решении Ваших во-просов и проблем'
+    'Окажу юридические услуги качественно, быстро и без лишних потерь по всем направлениям',
+    'Со мной Вы получите надежную защиту и моральную поддержку в решении Ваших вопросов и проблем'
 ]
 
 const myExperienceItem = [
@@ -24,6 +26,7 @@ const myExperienceItem = [
     {icon: LawyerInShow, title: 'Участвовала в телевизионной передаче «Конфликт интересов» в качестве эксперта'},
     {icon: CorporateLawsEvent , title: 'Организовала 3 просветительских проекта и выступала в них в качестве тренера'}
 ]
+
 
 function AboutMe(props) {
     return (
