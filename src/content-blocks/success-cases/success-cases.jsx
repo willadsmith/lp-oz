@@ -1,6 +1,7 @@
 import {ConfigProvider, Flex, Space, Timeline} from "antd";
 import './success-cases.scss'
 import { StarFilled } from "@ant-design/icons";
+import {useEffect, useRef, useState} from "react";
 
 // const successCasesItem = [
 //     { children: 'Оказывала юридическое сопровождение процедуры банкротства застройщика ООО «Сумет.Сибирь.Плюс» и впервые в городе Новосибирска обманутым дольщикам был передан объект незавершенного строительства для создания ЖСК и самостоятельной достройки объекта', color: '#00CCFF', dot: <StarFilled />},
@@ -29,6 +30,27 @@ const successCasesItem = [
     { children: 'Впервые были признаны незаконными общественные слушания по объекту государственной экологической экспертизы «Строительство полигона ТКО в Искитимском районе Новосибирской области» по иску моего клиента. ', color: '#00CCFF', dot: <StarFilled />}
 ]
 
+const FadeInSection = ({children}) => {
+    const domRef = useRef();
+
+    const [isVisible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                setVisible(true);
+                observer.unobserve(domRef.current);
+            }
+        });
+
+        observer.observe(domRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (<li ref={ domRef } className={ isVisible ? 'success-cases-li is-visible' : '' }>{ children }</li>);
+};
+
 function SuccessCases(props) {
     return (
         <Flex id={props.id} className='success-cases-block'>
@@ -43,7 +65,7 @@ function SuccessCases(props) {
                 <Space className='success-cases-block-timeline-desktop'>
                     <ol role="list">
                         {successCasesItem.map((item, index) => {
-                            return <li className='success-cases-li' key={index}>{item.children}</li>
+                            return <FadeInSection key={index}>{item.children}</FadeInSection>
                         })}
                     </ol>
                 </Space>

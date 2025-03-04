@@ -17,6 +17,21 @@ $accentColor: #ffffff;
   }
 }
 
+li {
+  opacity: 0;
+  transform: translate(0, 50%);
+  visibility: hidden;
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  will-change: opacity, visibility;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  display: flex;
+}
+
 .success-cases-block-content {
   display: flex;
   width: auto;

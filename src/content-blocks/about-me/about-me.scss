@@ -16,6 +16,21 @@
   }
 }
 
+section {
+  opacity: 0;
+  transform: translate(0, 50%);
+  visibility: hidden;
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  will-change: opacity, visibility;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  display: flex;
+}
+
 .about-me-block-content {
   display: flex;
   width: auto;
@@ -145,7 +160,7 @@
   align-items: center;
   padding: 10px 90px;
   font-family: 'GoznakBold', sans-serif;
-  width: auto;
+  width: 100%;
   color: white;
   height: 40px;
   border-radius: 10px;

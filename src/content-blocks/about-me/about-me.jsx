@@ -8,7 +8,7 @@ import CorporateLawsEvent from '../../assets/img/icons/corporate-laws-event.png'
 import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
 import './about-me.scss'
 import {ReadOutlined} from "@ant-design/icons";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Animator, batch, Fade, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 
 const aboutMeDescription = [
@@ -27,6 +27,27 @@ const myExperienceItem = [
     {icon: CorporateLawsEvent , title: 'Организовала 3 просветительских проекта и выступала в них в качестве тренера'}
 ]
 
+const FadeInSection = ({children}) => {
+    const domRef = useRef();
+
+    const [isVisible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                setVisible(true);
+                observer.unobserve(domRef.current);
+            }
+        });
+
+        observer.observe(domRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (<section ref={ domRef } className={ isVisible ? ' is-visible' : '' }>{ children }</section>);
+};
+
 
 function AboutMe(props) {
     return (
@@ -43,11 +64,13 @@ function AboutMe(props) {
                             <h2 className='about-me-block-description-title'>Адвокат Ольга Забалуева</h2>
                         </Space>
                         {aboutMeDescription.map((item, i) => {
-                            return <Space>
-                                <ReadOutlined style={{ color: '#fff' }}/>
-                                <h4 key={i} className='about-me-block-description-list'>
-                                    {item}</h4>
-                            </Space>
+                            return <FadeInSection key={i}>
+                                <Space>
+                                    <ReadOutlined style={{ color: '#fff' }}/>
+                                    <h4 key={i} className='about-me-block-description-list'>
+                                        {item}</h4>
+                                </Space>
+                            </FadeInSection>
                         })}
                     </Space>
                 </Space>
@@ -58,13 +81,13 @@ function AboutMe(props) {
             </Space>
             <Flex vertical={true} className='about-me-block-lines'>
                 {myExperienceItem.map((item, i) => {
-                    return <Space key={i} className='card-info-block'>
+                    return <FadeInSection key={i}><Space key={i} className='card-info-block'>
                         <img alt={i} className='icon-change-color-base' width={30} src={item.icon} /> {i === 3 ?
                         <p style={{ display: 'flex', flexDirection: 'row' }}>Впервые сформировала судебные прецеденты по различным делам (подробно можно прочитать в
                             разделе <a href="#part-3" id="hover-style" data-replace="«Мои успешные кейсы»"><span>«Мои успешные кейсы»</span></a> )
                         </p>
                         : item.title}
-                    </Space>
+                    </Space></FadeInSection>
                 })}
             </Flex>
         </Flex>
