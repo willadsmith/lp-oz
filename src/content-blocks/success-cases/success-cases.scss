@@ -23,6 +23,12 @@ li {
   visibility: hidden;
   transition: opacity 300ms ease-out, transform 300ms ease-out;
   will-change: opacity, visibility;
+
+  @media screen and (max-width: 480px) {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
 }
 
 .is-visible {

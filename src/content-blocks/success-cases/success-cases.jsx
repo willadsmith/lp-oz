@@ -79,7 +79,8 @@ function SuccessCases(props) {
                                     colorText: 'white',
                                     dotBg: '#1B1823FF',
                                     fontFamily: 'GoznakBold',
-                                    tailWidth: '0.1px'
+                                    tailWidth: '0.1px',
+                                    visibility: ''
                                 }
                             }
                         }}
