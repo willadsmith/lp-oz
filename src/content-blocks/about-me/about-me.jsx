@@ -56,6 +56,7 @@ function AboutMe(props) {
                 <Space className='about-me-block-content-title'>
                     <span className='line'></span>
                     <>Обо мне</>
+                    <span className='line2'></span>
                 </Space>
                 <Space className='about-me-block-description'>
                     <img className='person-photo-about-me' alt='about-me-photo' width={300} src={AboutMePhoto}/>

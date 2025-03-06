@@ -52,7 +52,7 @@
 
 .header-block-title-desktop {
   display: flex;
-  margin-left: 100px;
+  margin-left: 150px;
 
   @media screen and (max-width: 1106px) {
     display: none;
@@ -93,11 +93,18 @@
 .person-photo {
   display: flex;
   margin-top: 20px;
-  width: 728px;
+  width: 526px;
   overflow: hidden;
   flex-direction: row;
 
   @media screen and (max-width: 1106px) {
+    margin-top: 20px;
+    width: 500px;
+    overflow: hidden;
+    justify-content: flex-end;
+  }
+
+  @media screen and (max-width: 480px) {
     margin-top: 20px;
     width: 100%;
     overflow: hidden;

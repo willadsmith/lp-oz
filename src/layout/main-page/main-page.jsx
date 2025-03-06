@@ -1,4 +1,4 @@
-import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row} from "antd";
+import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row, Space} from "antd";
 import AboutMe from "../../content-blocks/about-me/about-me";
 import LawHelp from "../../content-blocks/law-help/law-help";
 import SuccessCases from "../../content-blocks/success-cases/success-cases";
@@ -8,18 +8,18 @@ import Header from "../header/header";
 import {useEffect, useState} from "react";
 import './main-page.scss'
 import Footer from "../footer/footer";
-import {MenuOutlined} from "@ant-design/icons";
 import {ButtonMenuAnimate} from "../../components/button-menu-animate/button-menu-animate";
 
 function MainPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { TextArea } = Input;
-
     const showModal = () => {
         setIsModalOpen(true);
     };
     const handleOk = () => {
-        setIsModalOpen(false);
+        // setIsModalOpen(false);
+        // transporter.sendMail(options);
+
     };
     const handleCancel = () => {
         setIsModalOpen(false);
@@ -68,6 +68,12 @@ function MainPage() {
     useEffect(() => {
         antInkChange()
     }, [antAnchorInk])
+
+    useEffect(() => {
+        fetch("/api")
+        .then(res => res.json())
+        .then(data => { console.log(data)})
+    }, []);
 
     useEffect(() => {
         for (let i = 0; i < spanIconElementDrawerMenu.length; i++) {
@@ -201,11 +207,11 @@ function MainPage() {
             </div>
             <Header openModalHandler={() => showModal()} />
             <div>
-                <AboutMe id="part-1" />
-                <LawHelp id="part-2" onPress={() => showModal()} />
-                <SuccessCases id="part-3" />
-                <AboutMeMedia id="part-4" />
-                <Contacts id="part-5" onPress={() => showModal()} />
+                <AboutMe id="part-1"/>
+                <LawHelp id="part-2" onPress={() => showModal()}/>
+                <SuccessCases id="part-3"/>
+                <AboutMeMedia id="part-4"/>
+                <Contacts id="part-5" onPress={() => showModal()}/>
             </div>
             <Footer />
         </>
