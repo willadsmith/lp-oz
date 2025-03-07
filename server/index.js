@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/api", (req, res) => {
-    res.json({ message: "Hello World!" });
+    res.json({ message: "Connection on!" });
 })
 
 const contactEmail = nodemailer.createTransport({
@@ -30,7 +30,7 @@ contactEmail.verify((err, info) => {
     if (err) {
         console.log(err);
     } else {
-        console.log('ready to send');
+        console.log('Service is ready!');
     }
 })
 
@@ -59,5 +59,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log("Listening on port " + PORT);
+    console.log("Listen port " + PORT);
 })
