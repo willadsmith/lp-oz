@@ -9,7 +9,6 @@ import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
 import './about-me.scss'
 import {ReadOutlined} from "@ant-design/icons";
 import {useEffect, useRef, useState} from "react";
-import {Animator, batch, Fade, ScrollContainer, ScrollPage, Sticky} from "react-scroll-motion";
 
 const aboutMeDescription = [
     'Правовая помощь в любой сложной ситуации',
