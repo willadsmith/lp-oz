@@ -1,5 +1,7 @@
 import {Flex, Space} from "antd";
-import AboutMePhoto from '../../assets/img/about-me-photo.jpg';
+import AboutMePhoto from '../../assets/img/about_me_photo.jpg';
+import Cert1 from '../../assets/img/cer1.jpg';
+import Cert2 from '../../assets/img/cert2.jpg';
 import PracticeFromIcon from '../../assets/img/icons/practice-from-icon.png';
 import LawStatus from '../../assets/img/icons/law-status.png';
 import LawyerInProcess from '../../assets/img/icons/lawyer-in-process.png';
@@ -9,6 +11,7 @@ import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
 import './about-me.scss'
 import {ReadOutlined} from "@ant-design/icons";
 import {useEffect, useRef, useState} from "react";
+import EmblaCarousel from "../../components/carosel-block/carosel-block";
 
 const aboutMeDescription = [
     'Правовая помощь в любой сложной ситуации',
@@ -47,6 +50,16 @@ const FadeInSection = ({children}) => {
     return (<section ref={ domRef } className={ isVisible ? ' is-visible' : '' }>{ children }</section>);
 };
 
+const OPTIONS = { loop: true }
+const SLIDES = [
+    <img src={Cert1} width={280} alt="cert"/>,
+    <img src={Cert2} width={200} alt="cert"/>,
+    <img src={Cert1} width={280} alt="cert"/>,
+    <img src={Cert2} width={200} alt="cert"/>,
+    <img src={Cert1} width={280} alt="cert"/>,
+    <img src={Cert2} width={200} alt="cert"/>,
+]
+
 
 function AboutMe(props) {
     return (
@@ -77,6 +90,7 @@ function AboutMe(props) {
                 <Space className='about-me-block-content-sub-title'>
                     <span className='line'></span>
                     <>Мой опыт</>
+                    <span className='line2'></span>
                 </Space>
             </Space>
             <Flex vertical={true} className='about-me-block-lines'>
@@ -89,6 +103,9 @@ function AboutMe(props) {
                         : item.title}
                     </Space></FadeInSection>
                 })}
+            </Flex>
+            <Flex>
+                <EmblaCarousel slides={SLIDES} options={OPTIONS} />
             </Flex>
         </Flex>
     )

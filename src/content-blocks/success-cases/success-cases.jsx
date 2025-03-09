@@ -58,12 +58,13 @@ function SuccessCases(props) {
                 <Space className='success-cases-block-content-title'>
                     <span className='line'></span>
                     <span className='text'>Мои успешные кейсы</span>
+                    <span className='line2'></span>
                 </Space>
-                <Space className='success-cases-block-content-title'>
-                    <span className='text'>Здесь представлены некоторые интересные дела, по которым вынесены решения в пользу моих клиентов для общего понимания моей частной практики.</span>
+                <Space className='success-cases-block-content-title_sub'>
+                    <span className='text2'>Здесь представлены некоторые интересные дела, по которым вынесены решения в пользу моих клиентов для общего понимания моей частной практики.</span>
                 </Space>
                 <Space className='success-cases-block-timeline-desktop'>
-                    <ol role="list">
+                    <ol style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} role="list">
                         {successCasesItem.map((item, index) => {
                             return <FadeInSection key={index}>{item.children}</FadeInSection>
                         })}

@@ -1,6 +1,7 @@
 import {Flex, Space} from "antd";
 import './about-me-media.scss'
-import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
+import AboutMePhoto from "../../assets/img/about_me_media_photo.jpg";
+import {useEffect, useRef, useState} from "react";
 
 const aboutMeMedia = [
     { title: 'Сколько стоят страдания?', description: 'Как суды оценивают моральный вред', url: 'https://ndn.info/publikatsii/25252-skolko-stoyat-stradaniya-kak-sudy-otsenivayut-moralnyj-vred/'},
@@ -15,6 +16,27 @@ const aboutMeMedia = [
     { title: 'Конфликт интересов 17.12.2017', description: 'НТН24', url: 'https://youtube.com/watch?v=I95yY8PiBBE&si=K45IweD8ba3sF7QG'}
 ]
 
+const FadeInSection = ({children}) => {
+    const domRef = useRef();
+
+    const [isVisible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                setVisible(true);
+                observer.unobserve(domRef.current);
+            }
+        });
+
+        observer.observe(domRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (<section ref={ domRef } className={ isVisible ? 'about-me-media-block-main-context is-visible' : 'about-me-media-block-main-context\'' }>{ children }</section>);
+};
+
 function AboutMeMedia(props) {
     return (
         <Flex id={props.id} className='about-me-media-block' vertical={true}>
@@ -22,6 +44,7 @@ function AboutMeMedia(props) {
                 <Space className='about-me-media-block-content-title'>
                     <span className='line'></span>
                     <>Публикации в СМИ</>
+                    <span className='line2'></span>
                 </Space>
             </Space>
             <Flex className='block-with-posts' vertical={false} align='center' justify={'center'}>
@@ -31,7 +54,7 @@ function AboutMeMedia(props) {
                 <Space>
                     <Flex vertical={true}>
                         {aboutMeMedia.map((item,index) => {
-                             return <div className='about-me-media-block-main-context'>
+                             return <FadeInSection key={index}><div>
                                  <div className='line-link'></div>
                                  <div className='about-me-media-block-main-title'>
                                      <Flex style={{ marginTop: 10 }} vertical={true} justify={'space-between'}>
@@ -73,6 +96,7 @@ function AboutMeMedia(props) {
                                  </div>
                                  {/*<div className='line-link'></div>*/}
                              </div>
+                             </FadeInSection>
                             }
                         )}
                     </Flex>

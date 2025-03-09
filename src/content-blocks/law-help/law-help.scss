@@ -11,6 +11,7 @@
   align-items: center;
   padding-top: 50px;
   padding-bottom: 150px;
+  justify-content: center;
 
   @media screen and (max-width: 480px) {
     border-radius: 15px 15px 0 0;
@@ -21,13 +22,14 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   // padding: 20px 160px 20px 160px;
   margin-left: 100px;
   margin-right: 100px;
 
   @media screen and (max-width: 480px) {
+    align-items: flex-start;
     margin: 0
   }
 }
@@ -40,6 +42,11 @@
 
   .text {
     color: $white;
+    font-size: 25px;
+
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+    }
   }
 
   .line {
@@ -50,8 +57,19 @@
     background-color: $white;
 
     @media screen and (max-width: 480px) {
-      margin-left: 30px;
       background-color: cyan;
+    }
+  }
+
+  .line2 {
+    display: block;
+    width: 60px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: $white;
+
+    @media screen and (max-width: 480px) {
+      display: none;
     }
   }
 }

@@ -2,7 +2,7 @@
 
 .about-me-media-block {
   width: 100%;
-  background: $blue-lite-color-bg-gradient;
+  background: $blue-lite-color;
   border-radius: 35px 35px 0 0;
   margin-top: -35px;
   z-index: 1;
@@ -14,15 +14,29 @@
   }
 }
 
+section {
+  opacity: 0;
+  transform: translate(0, 50%);
+  visibility: hidden;
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  will-change: opacity, visibility;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  display: flex;
+}
+
 .about-me-media-block-content {
   display: flex;
   width: auto;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  // padding: 20px 160px 20px 160px;
-  margin-left: 160px;
 
   @media screen and (max-width: 480px) {
+    align-items: flex-start;
     margin: 0
   }
 }
@@ -33,6 +47,11 @@
   margin-bottom: 25px;
   margin-top: 50px;
   font-family: 'GoznakBold', sans-serif;
+  font-size: 25px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
 
   .line {
     display: block;
@@ -42,8 +61,19 @@
     background-color: $white;
 
     @media screen and (max-width: 480px) {
-      margin-left: 30px;
       background-color: cyan;
+    }
+  }
+
+  .line2 {
+    display: block;
+    width: 60px;
+    height: 2px;
+    border-radius: 3px;
+    background-color: $white;
+
+    @media screen and (max-width: 480px) {
+      display: none;
     }
   }
 }

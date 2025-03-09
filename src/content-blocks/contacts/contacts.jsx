@@ -23,9 +23,9 @@ function Contacts(props) {
                     <Flex vertical={true}>
                         <Flex justify='center' align='center' vertical={false}>
                             <Space className='contacts-block-content-buttons-block-2'>
-                                <ButtonDarkSocial title='Telegram'/>
-                                <ButtonDarkSocial title='Facebook'/>
-                                <ButtonDarkSocial title='Instagram'/>
+                                <ButtonDarkSocial onPress={() => window.open('https://t.me/olgazabalueva_nsk', '_blank')} title='Telegram'/>
+                                <ButtonDarkSocial onPress={() => window.open('https://www.facebook.com/olgazabalueva.siberia', '_blank')} title='Facebook'/>
+                                <ButtonDarkSocial onPress={() => window.open('https://www.instagram.com/olgazabalueva_nsk', '_blank')} title='Instagram'/>
                             </Space>
                             {/*<Space className='contacts-block-content-buttons-block-3'>*/}
                             {/*    <img className='person-photo-about-me' alt='about-me-photo' width={400} height={280} src={AboutMePhoto}/>*/}

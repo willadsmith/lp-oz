@@ -1,4 +1,4 @@
-import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row, Space} from "antd";
+import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row} from "antd";
 import AboutMe from "../../content-blocks/about-me/about-me";
 import LawHelp from "../../content-blocks/law-help/law-help";
 import SuccessCases from "../../content-blocks/success-cases/success-cases";
@@ -9,21 +9,49 @@ import {useEffect, useState} from "react";
 import './main-page.scss'
 import Footer from "../footer/footer";
 import {ButtonMenuAnimate} from "../../components/button-menu-animate/button-menu-animate";
+import {Container, Heading, Text} from "@react-email/components";
 
 function MainPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { TextArea } = Input;
     const showModal = () => {
         setIsModalOpen(true);
     };
-    const handleOk = () => {
-        // setIsModalOpen(false);
-        // transporter.sendMail(options);
+    const [emailClient, setEmailClient] = useState('');
+    const [fioClient, setFioClient] = useState('');
+    const [questionClient, setQuestionClient] = useState('');
 
+    const handleOk = () => {
+        return fetch('https://willadsmith-mail-service-4a54.twc1.net/api/contact', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+                fio: fioClient,
+                email: emailClient,
+                message:
+                    <Container>
+                        <Heading className="text-center">Вопрос клиента с сайта:</Heading>
+
+                        <Container className="bg-gray-400">
+                            <Text className="px-[12px] text-white">
+                                {questionClient}
+                            </Text>
+                        </Container>
+                    </Container>,
+            })}
+        )
+            .then(res => {
+                console.log(res.json())
+                setIsModalOpen(false);
+            })
+            .catch(err => console.log(err));
     };
     const handleCancel = () => {
         setIsModalOpen(false);
     };
+
 
     const antAnchorContainer = document.getElementsByClassName('ant-anchor')
     const antAnchorLinkTitle = document.getElementsByClassName('ant-anchor-link-title')
@@ -68,12 +96,6 @@ function MainPage() {
     useEffect(() => {
         antInkChange()
     }, [antAnchorInk])
-
-    useEffect(() => {
-        fetch("/api")
-        .then(res => res.json())
-        .then(data => { console.log(data)})
-    }, []);
 
     useEffect(() => {
         for (let i = 0; i < spanIconElementDrawerMenu.length; i++) {
@@ -142,20 +164,19 @@ function MainPage() {
             <Modal
                 title="Заполните форму"
                 open={isModalOpen}
-                onOk={handleOk}
                 onCancel={handleCancel}
                 footer={
-                    <Button style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
+                    <Button onClick={handleOk} style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
                         Отправить заявку
                     </Button>}>
                 <p>Кратко опишите суть проблемы и я обязательно помогу Вам</p>
-                <TextArea placeholder="Ваше ФИО" autoSize/>
+                <Input onChange={(e) => setFioClient(e.target.value)} placeholder="Ваше ФИО" autoSize/>
                 <div
                     style={{
                         margin: '12px 0',
                     }}
                 />
-                <TextArea placeholder="Ваш e-mail адрес" autoSize={{
+                <Input onChange={(e) => setEmailClient(e.target.value)} placeholder="Ваш e-mail адрес" autoSize={{
                     minRows: 2,
                     maxRows: 6,
                 }}
@@ -165,7 +186,8 @@ function MainPage() {
                         margin: '24px 0',
                     }}
                 />
-                <TextArea
+                <Input
+                    onChange={(e) => setQuestionClient(e.target.value)}
                     placeholder="Ваш вопрос"
                     autoSize={{
                         minRows: 3,

@@ -10,6 +10,7 @@ function LawHelp(props) {
                 <Space className='law-help-block-content-title'>
                     <span className='line'></span>
                     <span className='text'>Правовая помощь</span>
+                    <span className='line2'></span>
                 </Space>
 
                 <Flex className='main-block-item'>
