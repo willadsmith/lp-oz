@@ -162,14 +162,14 @@ function MainPage() {
                 </Row>
             </Drawer>
             <Modal
-                title="Заполните форму"
+                title={<span style={{width: '100%', fontFamily: 'GoznakBold'}}> Заполните форму </span>}
                 open={isModalOpen}
                 onCancel={handleCancel}
                 footer={
                     <Button onClick={handleOk} style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
                         Отправить заявку
                     </Button>}>
-                <p>Кратко опишите суть проблемы и я обязательно помогу Вам</p>
+                <p style={{fontFamily: 'GoznakBold'}}>Кратко опишите суть проблемы и я обязательно помогу Вам</p>
                 <Input onChange={(e) => setFioClient(e.target.value)} placeholder="Ваше ФИО" autoSize/>
                 <div
                     style={{

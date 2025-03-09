@@ -12,6 +12,7 @@ function Contacts(props) {
                 <Space className='contacts-block-content-title'>
                     <span className='line'></span>
                     <>Контакты</>
+                    <span className='line2'></span>
                 </Space>
             </Space>
             <Space className='contacts-block-content-buttons-block'>
