@@ -9,7 +9,8 @@ import {useEffect, useState} from "react";
 import './main-page.scss'
 import Footer from "../footer/footer";
 import {ButtonMenuAnimate} from "../../components/button-menu-animate/button-menu-animate";
-import {Container, Heading, Text} from "@react-email/components";
+import {Container, Heading, Html, Text, render} from "@react-email/components";
+import {templateLetter} from "./template/tepmlateEmail";
 
 function MainPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +20,7 @@ function MainPage() {
     const [emailClient, setEmailClient] = useState('');
     const [fioClient, setFioClient] = useState('');
     const [questionClient, setQuestionClient] = useState('');
+    const emailTemplate =  render(templateLetter(questionClient))
 
     const handleOk = () => {
         return fetch('https://willadsmith-mail-service-4a54.twc1.net/api/contact', {
@@ -30,16 +32,7 @@ function MainPage() {
             body: JSON.stringify({
                 fio: fioClient,
                 email: emailClient,
-                message:
-                    <Container>
-                        <Heading className="text-center">Вопрос клиента с сайта:</Heading>
-
-                        <Container className="bg-gray-400">
-                            <Text className="px-[12px] text-white">
-                                {questionClient}
-                            </Text>
-                        </Container>
-                    </Container>,
+                message: emailTemplate,
             })}
         )
             .then(res => {
