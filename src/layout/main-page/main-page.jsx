@@ -9,7 +9,7 @@ import {useEffect, useState} from "react";
 import './main-page.scss'
 import Footer from "../footer/footer";
 import {ButtonMenuAnimate} from "../../components/button-menu-animate/button-menu-animate";
-import {Container, Heading, Html, Text, render} from "@react-email/components";
+import {render} from "@react-email/components";
 import {templateLetter} from "./template/tepmlateEmail";
 
 function MainPage() {

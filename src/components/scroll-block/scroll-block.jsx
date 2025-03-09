@@ -57,7 +57,7 @@ const ScrollBlock = (props) => {
             card.style.maxHeight = `calc(100vh - ${heightValue - 3}px)`;
 
         });
-    }, [cardsCount]);
+    }, []);
 
   return (
       <div className="cards-scroll">

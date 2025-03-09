@@ -1,7 +1,6 @@
-import {Button, Flex, Space} from "antd";
+import { Flex, Space } from "antd";
 import QrVk from './../../assets/img/qr_vk.jpg'
 import './contacts.scss'
-import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
 import ContactMeButtonDark from "../../components/contact-me-button-dark/contact-me-button-dark";
 import ButtonDarkSocial from "../../components/button-dark-social/button-dark-social";
 
