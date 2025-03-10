@@ -2,6 +2,18 @@ import {Flex, Space} from "antd";
 import AboutMePhoto from '../../assets/img/about_me_photo.jpg';
 import Cert1 from '../../assets/img/cer1.jpg';
 import Cert2 from '../../assets/img/cert2.jpg';
+import Cert3 from '../../assets/img/cert3.jpg';
+import Cert4 from '../../assets/img/cert4.jpg';
+import Cert5 from '../../assets/img/cert5.jpg';
+import Cert6 from '../../assets/img/cert6.jpg';
+import Cert7 from '../../assets/img/cert7.jpg';
+import Cert8 from '../../assets/img/cert8.jpg';
+import Cert9 from '../../assets/img/cert9.jpg';
+import Cert10 from '../../assets/img/cert10.jpg';
+import Cert11 from '../../assets/img/cert11.jpg';
+import Cert12 from '../../assets/img/cert12.jpg';
+import Cert13 from '../../assets/img/cert13.jpg';
+import Cert14 from '../../assets/img/cert14.jpg';
 import PracticeFromIcon from '../../assets/img/icons/practice-from-icon.png';
 import LawStatus from '../../assets/img/icons/law-status.png';
 import LawyerInProcess from '../../assets/img/icons/lawyer-in-process.png';
@@ -54,10 +66,18 @@ const OPTIONS = { loop: true }
 const SLIDES = [
     <img src={Cert1} width={280} alt="cert"/>,
     <img src={Cert2} width={200} alt="cert"/>,
-    <img src={Cert1} width={280} alt="cert"/>,
-    <img src={Cert2} width={200} alt="cert"/>,
-    <img src={Cert1} width={280} alt="cert"/>,
-    <img src={Cert2} width={200} alt="cert"/>,
+    <img src={Cert3} width={280} alt="cert"/>,
+    <img src={Cert4} width={280} alt="cert"/>,
+    <img src={Cert5} width={280} alt="cert"/>,
+    <img src={Cert6} width={280} alt="cert"/>,
+    <img src={Cert7} width={200} alt="cert"/>,
+    <img src={Cert8} width={280} alt="cert"/>,
+    <img src={Cert9} width={280} alt="cert"/>,
+    <img src={Cert10} width={280} alt="cert"/>,
+    <img src={Cert11} width={280} alt="cert"/>,
+    <img src={Cert12} width={280} alt="cert"/>,
+    <img src={Cert13} width={200} alt="cert"/>,
+    <img src={Cert14} width={280} alt="cert"/>,
 ]
 
 
