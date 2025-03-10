@@ -63,8 +63,8 @@ const ScrollBlock = (props) => {
       <div className="cards-scroll">
           <div className="card-row">
 
-              { cardItem.map((item) => {
-                  return <div className="card">
+              { cardItem.map((item, index) => {
+                  return <div key={index} className="card">
                       <div className="card__header">
                           <h2>{item.title}</h2>
                       </div>

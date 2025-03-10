@@ -53,7 +53,7 @@ function AboutMeMedia(props) {
                 </Space>
                 <Space>
                     <Flex vertical={true}>
-                        {aboutMeMedia.map((item,index) => {
+                        {aboutMeMedia.map((item, index) => {
                              return <FadeInSection key={index}><div>
                                  <div className='line-link'></div>
                                  <div className='about-me-media-block-main-title'>
@@ -63,8 +63,7 @@ function AboutMeMedia(props) {
                                      </Flex>
 
                                      <div className="styled-wrapper">
-                                         <a className="button" href={item.link}
-                                            target={'_blank'} rel={'noopener noreferrer'}>
+                                         <a className="button" href={item.url} target={'_blank'} rel={'noopener noreferrer'}>
                                              <div className="button-box">
                                           <span className="button-elem">
                                             <svg
