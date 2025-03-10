@@ -1,4 +1,4 @@
-import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row} from "antd";
+import {Anchor, Button, Col, Drawer, Flex, Input, Modal, Row, Spin} from "antd";
 import AboutMe from "../../content-blocks/about-me/about-me";
 import LawHelp from "../../content-blocks/law-help/law-help";
 import SuccessCases from "../../content-blocks/success-cases/success-cases";
@@ -19,7 +19,11 @@ function MainPage() {
     const [fioClient, setFioClient] = useState('');
     const [questionClient, setQuestionClient] = useState('');
 
+    const [disabledButton, setDisabledButton] = useState(false);
+    const [loaderButton, setLoaderButton] = useState(false);
+
     const handleOk = () => {
+        setLoaderButton(true)
         return fetch('https://willadsmith-mail-service-4a54.twc1.net/api/contact', {
             headers: {
                 'Accept': 'application/json',
@@ -33,12 +37,27 @@ function MainPage() {
                 })}
         )
             .then(res => {
-                console.log(res.json())
+                setEmailClient('')
+                setFioClient('')
+                setQuestionClient('')
+                setLoaderButton(false)
                 setIsModalOpen(false);
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                setEmailClient('')
+                setFioClient('')
+                setQuestionClient('')
+
+                setLoaderButton(false)
+            });
     };
     const handleCancel = () => {
+        setEmailClient('');
+        setFioClient('');
+        setQuestionClient('');
+
+
         setIsModalOpen(false);
     };
 
@@ -86,6 +105,14 @@ function MainPage() {
     useEffect(() => {
         antInkChange()
     }, [antAnchorInk])
+
+    useEffect(() => {
+        if (fioClient === '' || questionClient === '' || emailClient === '') {
+            setDisabledButton(true)
+        } else {
+            setDisabledButton(false)
+        }
+    }, [fioClient, questionClient, emailClient])
 
     useEffect(() => {
         for (let i = 0; i < spanIconElementDrawerMenu.length; i++) {
@@ -156,17 +183,18 @@ function MainPage() {
                 open={isModalOpen}
                 onCancel={handleCancel}
                 footer={
-                    <Button onClick={handleOk} style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
-                        Отправить заявку
+                    <Button onClick={handleOk} disabled={disabledButton || loaderButton} style={{width: '100%', fontFamily: 'GoznakBold'}} color="default" variant="outlined">
+                        {!loaderButton && 'Отправить заявку'}
+                        {loaderButton && <Spin />}
                     </Button>}>
                 <p style={{fontFamily: 'GoznakBold'}}>Кратко опишите суть проблемы и я обязательно помогу Вам</p>
-                <Input onChange={(e) => setFioClient(e.target.value)} placeholder="Ваше ФИО" autoSize/>
+                <Input value={fioClient} onChange={(e) => setFioClient(e.target.value)} placeholder="Ваше ФИО" autoSize/>
                 <div
                     style={{
                         margin: '12px 0',
                     }}
                 />
-                <Input onChange={(e) => setEmailClient(e.target.value)} placeholder="Ваш e-mail адрес" autoSize={{
+                <Input value={emailClient} onChange={(e) => setEmailClient(e.target.value)} placeholder="Ваш e-mail адрес" autoSize={{
                     minRows: 2,
                     maxRows: 6,
                 }}
@@ -177,6 +205,7 @@ function MainPage() {
                     }}
                 />
                 <Input
+                    value={questionClient}
                     onChange={(e) => setQuestionClient(e.target.value)}
                     placeholder="Ваш вопрос"
                     autoSize={{
