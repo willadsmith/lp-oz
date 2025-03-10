@@ -29,11 +29,13 @@ function MainPage() {
                 'Content-Type': 'application/json'
             },
             method: 'POST',
-            body: {
-                fio: fioClient,
-                email: emailClient,
-                message: questionClient,
-            }}
+            body: JSON.stringify(
+                {
+                    fio: fioClient,
+                    email: emailClient,
+                    message: questionClient,
+                }
+            )}
         )
             .then(res => {
                 console.log(res.json())
