@@ -1,5 +1,11 @@
 import {Flex, Space} from "antd";
+import './about-me.scss'
+import {ReadOutlined} from "@ant-design/icons";
+import {useEffect, useRef, useState} from "react";
 import AboutMePhoto from '../../assets/img/about_me_photo.jpg';
+import EmblaCarousel from "../../components/carosel-block/carosel-block";
+
+// certs
 import Cert1 from '../../assets/img/cer1.jpg';
 import Cert2 from '../../assets/img/cert2.jpg';
 import Cert3 from '../../assets/img/cert3.jpg';
@@ -14,16 +20,14 @@ import Cert11 from '../../assets/img/cert11.jpg';
 import Cert12 from '../../assets/img/cert12.jpg';
 import Cert13 from '../../assets/img/cert13.jpg';
 import Cert14 from '../../assets/img/cert14.jpg';
+
+// icons
 import PracticeFromIcon from '../../assets/img/icons/practice-from-icon.png';
 import LawStatus from '../../assets/img/icons/law-status.png';
 import LawyerInProcess from '../../assets/img/icons/lawyer-in-process.png';
 import AdvocateCreateProcess from '../../assets/img/icons/advocate-create-process.png';
 import CorporateLawsEvent from '../../assets/img/icons/corporate-laws-event.png';
 import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
-import './about-me.scss'
-import {ReadOutlined} from "@ant-design/icons";
-import {useEffect, useRef, useState} from "react";
-import EmblaCarousel from "../../components/carosel-block/carosel-block";
 
 const aboutMeDescription = [
     'Правовая помощь в любой сложной ситуации',

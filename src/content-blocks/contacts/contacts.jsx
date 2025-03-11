@@ -1,8 +1,10 @@
 import { Flex, Space } from "antd";
-import QrVk from './../../assets/img/qr_vk.jpg'
 import './contacts.scss'
 import ContactMeButtonDark from "../../components/contact-me-button-dark/contact-me-button-dark";
 import ButtonDarkSocial from "../../components/button-dark-social/button-dark-social";
+
+// qr
+import QrVk from './../../assets/img/qr_vk.jpg'
 
 function Contacts(props) {
     return (
@@ -27,13 +29,11 @@ function Contacts(props) {
                                 <ButtonDarkSocial onPress={() => window.open('https://www.facebook.com/olgazabalueva.siberia', '_blank')} title='Facebook'/>
                                 <ButtonDarkSocial onPress={() => window.open('https://www.instagram.com/olgazabalueva_nsk', '_blank')} title='Instagram'/>
                             </Space>
-                            {/*<Space className='contacts-block-content-buttons-block-3'>*/}
-                            {/*    <img className='person-photo-about-me' alt='about-me-photo' width={400} height={280} src={AboutMePhoto}/>*/}
-                            {/*</Space>*/}
                         </Flex>
                         <Space>
                             <Space className='contact-block-attentions'>
-                                * Facebook, Instagram принадлежит компании Meta Platforms Inc., которая признана экстремистской организацией
+                                * Институт права и публичной политики, Московская школа гражданского просвещения, Фонд «Так-так-так»,  Институт развития прессы Сибирь, Комитет по предотвращению пыток внесены Минюстом РФ в реестр иностранных агентов
+                                <br />* Facebook, Instagram принадлежит компании Meta Platforms Inc., которая признана экстремистской организацией
                             </Space>
                         </Space>
                     </Flex>
