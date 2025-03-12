@@ -5,10 +5,12 @@ import ButtonDarkSocial from "../../components/button-dark-social/button-dark-so
 
 // qr
 import QrVk from './../../assets/img/qr_vk.jpg'
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 function Contacts(props) {
     return (
         <Flex id={props.id} className='contacts-block' vertical={true}>
+            <HelmetComponent title='Контакты' />
             <Space className='contacts-block-content'>
                 <Space className='contacts-block-content-title'>
                     <span className='line'></span>
@@ -33,7 +35,7 @@ function Contacts(props) {
                         <Space>
                             <Space className='contact-block-attentions'>
                                 * Институт права и публичной политики, Московская школа гражданского просвещения, Фонд «Так-так-так»,  Институт развития прессы Сибирь, Комитет по предотвращению пыток внесены Минюстом РФ в реестр иностранных агентов
-                                <br />* Facebook, Instagram принадлежит компании Meta Platforms Inc., которая признана экстремистской организацией
+                                <br />* Facebook, Instagram принадлежит компании Meta Platforms Inc., которая признана экстремистской организацией в РФ
                             </Space>
                         </Space>
                     </Flex>

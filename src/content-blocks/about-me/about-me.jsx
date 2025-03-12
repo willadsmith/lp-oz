@@ -28,6 +28,7 @@ import LawyerInProcess from '../../assets/img/icons/lawyer-in-process.png';
 import AdvocateCreateProcess from '../../assets/img/icons/advocate-create-process.png';
 import CorporateLawsEvent from '../../assets/img/icons/corporate-laws-event.png';
 import LawyerInShow from '../../assets/img/icons/lawer-in-show.png';
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 const aboutMeDescription = [
     'Правовая помощь в любой сложной ситуации',
@@ -88,6 +89,7 @@ const SLIDES = [
 function AboutMe(props) {
     return (
         <Flex align={'center'} id={props.id} className='about-me-block' vertical={true}>
+            <HelmetComponent title="Обо мне" />
             <Space className='about-me-block-content'>
                 <Space className='about-me-block-content-title'>
                     <span className='line'></span>

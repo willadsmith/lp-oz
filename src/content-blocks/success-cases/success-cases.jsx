@@ -2,6 +2,7 @@ import {ConfigProvider, Flex, Space, Timeline} from "antd";
 import './success-cases.scss'
 import { StarFilled } from "@ant-design/icons";
 import {useEffect, useRef, useState} from "react";
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 const successCasesItem = [
     { children: 'Оказывала юридическое сопровождение процедуры банкротства застройщика ООО «Сумет.Сибирь.Плюс» и впервые в городе Новосибирске обманутым дольщикам был передан объект незавершенного строительства для создания ЖСК и самостоятельной достройки объекта ', color: '#00CCFF', dot: <StarFilled />},
@@ -37,6 +38,7 @@ const FadeInSection = ({children}) => {
 function SuccessCases(props) {
     return (
         <Flex id={props.id} className='success-cases-block'>
+            <HelmetComponent title="Мои успешные кейсы" />
             <Space className='success-cases-block-content'>
                 <Space className='success-cases-block-content-title'>
                     <span className='line'></span>

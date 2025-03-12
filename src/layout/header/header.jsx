@@ -2,10 +2,12 @@ import './header.scss'
 import LadyPersonResize from '../../assets/img/lady_person-without-bg_resize.png';
 import { Divider, Flex, Space } from 'antd';
 import ContactMeButton from "../../components/contact-me-button/contact-me-button";
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 function Header(props) {
     return (
         <Flex className="header-block" direction="row" justify='center' alignItems="center">
+            <HelmetComponent title="Ваш надежный защитник" />
             <Flex className='header-block-title-desktop' vertical={true} alignItems="center" justify="center">
                 <h3 className='title-vacancy'>Адвокат</h3>
                 <h1 className='title-firstname'>Ольга Забалуева</h1>

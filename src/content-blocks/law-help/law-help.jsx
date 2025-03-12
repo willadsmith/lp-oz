@@ -2,10 +2,12 @@ import {Flex, Space} from "antd";
 import './law-help.scss'
 import ScrollBlock from "../../components/scroll-block/scroll-block";
 import AboutMePhoto from "../../assets/img/about-me-photo.jpg";
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 function LawHelp(props) {
     return (
         <Flex id={props.id} className='law-help-block'>
+            <HelmetComponent title="Правовая помощь" />
             <Space className='law-help-block-content'>
                 <Space className='law-help-block-content-title'>
                     <span className='line'></span>

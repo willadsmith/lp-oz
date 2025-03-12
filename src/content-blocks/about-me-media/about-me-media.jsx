@@ -2,6 +2,7 @@ import {Flex, Space} from "antd";
 import './about-me-media.scss'
 import AboutMePhoto from "../../assets/img/about_me_media_photo.jpg";
 import {useEffect, useRef, useState} from "react";
+import HelmetComponent from "../../components/helmet/HelmetComponent";
 
 const aboutMeMedia = [
     { title: 'Сколько стоят страдания?', description: 'Как суды оценивают моральный вред', url: 'https://ndn.info/publikatsii/25252-skolko-stoyat-stradaniya-kak-sudy-otsenivayut-moralnyj-vred/'},
@@ -40,6 +41,7 @@ const FadeInSection = ({children}) => {
 function AboutMeMedia(props) {
     return (
         <Flex id={props.id} className='about-me-media-block' vertical={true}>
+            <HelmetComponent title='Публикации в СМИ' />
             <Space className='about-me-media-block-content'>
                 <Space className='about-me-media-block-content-title'>
                     <span className='line'></span>
